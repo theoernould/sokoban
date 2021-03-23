@@ -12,6 +12,23 @@ void initialise_le_terrain (niveau_t* niveau) {
     }
 }
 
+int getNbCases(niveau_t* niveau) {
+    return niveau->nb_lignes * niveau->nb_colonnes;
+}
+
+affichage_niveau (niveau_t* niveau) {
+    char* affichage;
+    int no_ligne = -1;
+    for(int i=0;i<getNbCases(niveau);i++) {
+        if(i%niveau->nb_colonnes == 0) {
+            no_ligne++;
+            sprintf(affichage, "%c\n", lecture_du_terrain(niveau, i%niveau->nb_colonnes, no_ligne));
+        } else {
+            sprintf(affichage, "%c", lecture_du_terrain(niveau, i%niveau->nb_colonnes, no_ligne));
+        }
+    }
+}
+
 niveau_t* nouveau_niveau(int nb_colonnes, int nb_lignes){
 	niveau_t* niveau;
 	niveau = malloc(sizeof(niveau_t));
