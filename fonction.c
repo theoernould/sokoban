@@ -27,12 +27,11 @@ void affichage_niveau (niveau_t* niveau) {
     for(int i=0;i<getNbCases(niveau);i++) {
         if(i%niveau->nb_colonnes == 0) {
             no_ligne++;
-            printf("%c\n", lecture_du_terrain(niveau, i%niveau->nb_colonnes, no_ligne));
-        } else {
-            printf("%c", lecture_du_terrain(niveau, i%niveau->nb_colonnes, no_ligne));
+            printf("\n");
         }
-        //printf("i = %i l = %i c = %i\n",i,no_ligne,i%niveau->nb_colonnes);
+        printf("%c", lecture_du_terrain(niveau, i%niveau->nb_colonnes, no_ligne));
     }
+    printf("\n");
 }
 
 niveau_t* nouveau_niveau(int nb_colonnes, int nb_lignes) {
