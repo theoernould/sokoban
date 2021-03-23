@@ -41,3 +41,15 @@ niveau_t* nouveau_niveau(int nb_colonnes, int nb_lignes) {
         niveau->terrain = malloc(sizeof(char)*nb_lignes*nb_colonnes);
 	return niveau;
 }
+
+niveau_t* lecture_du_niveau(int quel_niveau) {
+    char nomNiveau[20];
+    sprintf(nomNiveau, "./Niveaux/niveau_%i",quel_niveau);
+    FILE* niveau = fopen(nomNiveau,"r");
+    char car = getc(niveau);
+    while(car != EOF) {
+        printf("%c",car);
+        car = getc(niveau);
+    }
+    fclose(niveau);
+}
