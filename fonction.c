@@ -11,3 +11,12 @@ void initialise_le_terrain (niveau_t* niveau) {
         place_sur_terrain(niveau, i%niveau->nb_colonnes, no_ligne; '#');
     }
 }
+
+niveau_t* nouveau_niveau(int nb_colonnes, int nb_lignes){
+	niveau_t* niveau;
+	niveau = malloc(sizeof(niveau_t));
+	niveau->nb_colonnes = nb_colonnes;
+	niveau->nb_lignes = nb_lignes;
+	niveau->terrain = malloc(sizeof(char)*nb_lignes*nb_colonnes)
+	return terrain
+}
