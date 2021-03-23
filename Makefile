@@ -1,2 +1,2 @@
 all:
-	gcc -Wall -o main main.c fonctions.c
+	gcc -Wall -o main main.c fonction.c
