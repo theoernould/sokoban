@@ -8,3 +8,6 @@ char entree_du_joueur (void){
 	return lettre;
 }
 
+void deplacement (niveau_t* niveau, char direction){
+	
+}

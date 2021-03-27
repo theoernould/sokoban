@@ -6,7 +6,7 @@ void place_sur_terrain (niveau_t* niveau, int colonne, int ligne, char car) {
 }
 
 char lecture_du_terrain (niveau_t* niveau, int colonne, int ligne) {
-    return ligne*niveau->nb_colonnes + colonne;
+    return *(niveau->terrain+(ligne*niveau->nb_colonnes + colonne));
 }
 
 void initialise_le_terrain (niveau_t* niveau) {
@@ -42,14 +42,14 @@ niveau_t* nouveau_niveau(int nb_colonnes, int nb_lignes) {
 	return niveau;
 }
 
-niveau_t* lecture_du_niveau(int quel_niveau) {
+void lecture_du_niveau(int quel_niveau) {
     char nomNiveau[20];
     sprintf(nomNiveau, "./Niveaux/niveau_%i",quel_niveau);
     FILE* niveau = fopen(nomNiveau,"r");
-    char car = getc(niveau);
+    char car = fgetc(niveau);
     while(car != EOF) {
-        printf("%c",car);
-        car = getc(niveau);
+        putchar(car);
+        car = fgetc(niveau); 
     }
     fclose(niveau);
 }
