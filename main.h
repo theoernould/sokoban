@@ -15,6 +15,5 @@ typedef struct {
 	point_t* perso;
 } niveau_t;
 
+#include "niveau.h"
 
-
-#include "fonction.h"
